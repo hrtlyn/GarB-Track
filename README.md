@@ -1,6 +1,6 @@
 # GarB-Track System
 
-GarB-Track is a **garbage collection monitoring system** developed with:
+GarB-Track is a **garbage collection monitoring system** developed by: FullByte
 
 - **Frontend:** React.js  
 - **Backend:** Laravel (PHP)  
@@ -11,9 +11,9 @@ This guide explains how to set up the system on your local machine.
 ---
 
 ## 📂 Project Structure
-garb-track-system/
-├── frontend/   # React app
-└── backend/    # Laravel app
+Garb-Track/
+├── garb-track-frontend/   # React app
+└── garbtrack-backend/    # Laravel app
 
 ---
 
@@ -29,6 +29,8 @@ Before running the system, install:
 ---
 
 ## 🔧 Setup Instructions
+To start it run cmd on frontend and run "npm start"
+on backend open xampp and use Terminal and run "php artisan serve" 
 
 ### 1️⃣ Clone the Repository
 ```bash
