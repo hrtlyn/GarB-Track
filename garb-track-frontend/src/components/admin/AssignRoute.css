@@ -1,0 +1,57 @@
+.assign-route-container {
+  background: #ddf6d2;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.assign-route-container h2 {
+  color: #3e5f44;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: bold;
+  color: #3e5f44;
+}
+
+input,
+select,
+textarea {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #e8ffd7;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #5e936c;
+  box-shadow: 0 0 0 2px rgba(94, 147, 108, 0.3);
+}
+
+button {
+  background: #5e936c;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #3e5f44;
+}
