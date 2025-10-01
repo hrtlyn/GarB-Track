@@ -1,0 +1,154 @@
+.schedule-section {
+  margin-top: 2rem;
+}
+
+/* Form */
+.schedule-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.schedule-form input,
+.schedule-form select {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+/* Table wrapper for horizontal scroll */
+.schedule-table-wrapper {
+  overflow-x: auto; /* Enables horizontal scroll on small screens */
+  width: 100%;
+}
+
+/* Table */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #E8FFD7;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 600px; /* ensures table maintains structure on scroll */
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #93DA97;
+}
+
+.schedule-table th {
+  background-color: #93DA97;
+  color: #3E5F44;
+}
+
+.schedule-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* --- ACTION BUTTONS --- */
+.schedule-actions {
+  display: flex;
+  gap: 0.75rem; /* spacing between buttons */
+  flex-wrap: wrap;
+}
+
+.schedule-actions .primary-btn,
+.schedule-actions .gray-btn {
+  padding: 0.4rem 1rem !important;      
+  font-size: 0.95rem !important;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+  line-height: 1.2;
+  flex: 0 0 auto; /* prevent stretching */
+  min-width: 90px !important; /* consistent width */
+  margin: 0 4px !important;   /* spacing */
+}
+
+/* Green primary button (Edit, Save) */
+.primary-btn {
+  background-color: #5E936C;
+  color: #fff;
+}
+.primary-btn:hover {
+  background-color: #3E5F44;
+}
+
+/* Gray secondary button (Delete, Cancel) */
+.gray-btn {
+  background-color: #ccc;
+  color: #333;
+}
+.gray-btn:hover {
+  background-color: #999;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.modal-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end; /* aligns buttons to the right */
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .schedule-form input,
+  .schedule-form select {
+    flex: 1 1 100%;
+  }
+
+  .modal-actions {
+    justify-content: center;
+  }
+}
+
+.table-actions {
+  display: flex;
+  gap: 0.5rem; /* space between buttons */
+}
+
+.table-actions button {
+  flex: 0 0 auto; /* prevent stretching */
+  background-color: #5E936C; /* green like Edit */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0.8rem 1.2rem; /* increased height and width */
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.table-actions button:hover {
+  background-color: #3E5F44; /* darker green on hover */
+}

@@ -1,0 +1,346 @@
+/* GLOBAL */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #E8FFD7;
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.guest-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  flex-direction: row;
+  position: relative;
+}
+
+/* SIDEBAR */
+.guest-sidebar {
+  width: 240px;
+  background-color: #3E5F44;
+  color: #E8FFD7;
+  padding: 1.5rem 1rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  z-index: 1001;
+}
+
+.guest-logo-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.logo-img-large {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #93DA97;
+  margin: 0;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar-menu li {
+  margin-bottom: 1rem;
+}
+
+.sidebar-menu a {
+  display: block;
+  padding: 0.4rem 0.6rem;
+  color: #E8FFD7;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.3s ease;
+}
+
+.sidebar-menu a:hover {
+  background-color: #5E936C;
+  color: #ffffff;
+}
+
+/* TOGGLE BUTTON */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1002;
+  background-color: #5E936C;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* OVERLAY */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.sidebar-overlay.visible {
+  display: block;
+}
+
+/* MAIN CONTENT */
+.guest-main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #DDF6D2;
+  overflow-y: auto;
+  height: 100vh;
+  scroll-behavior: smooth;
+  z-index: 1;
+}
+
+.guest-header {
+  padding-left: 3rem;
+}
+
+.guest-header h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #3E5F44;
+}
+
+.guest-header p {
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* SECTIONS */
+.guest-section {
+  margin-top: 2.5rem;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  color: #3E5F44;
+  border-bottom: 2px solid #5E936C;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ANNOUNCEMENTS */
+.announcement-box-container {
+  background-color: #93DA97;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 8px solid #5E936C;
+}
+
+.announcement-box-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #3E5F44;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #5E936C;
+  padding-bottom: 0.5rem;
+}
+
+.announcement-item {
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #7fb58c;
+}
+
+.announcement-item:last-child {
+  border-bottom: none;
+}
+
+.announcement-item h4 {
+  margin: 0;
+  color: #2f4f3a;
+  font-size: 1.1rem;
+}
+
+.announcement-item p {
+  color: #444;
+  margin: 0.3rem 0;
+  line-height: 1.5;
+}
+
+.announcement-date {
+  font-size: 0.85rem;
+  color: #2f4f3a;
+}
+
+/* FORMS */
+input, select, textarea {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #E8FFD7;
+  color: #3E5F44;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #5E936C;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(62, 95, 68, 0.2);
+}
+
+/* BUTTONS */
+button {
+  padding: 0.5rem 1.2rem;
+  background-color: #5E936C;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #3E5F44;
+}
+
+/* TABLES */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+table th {
+  background-color: #93DA97;
+  color: #3E5F44;
+  font-weight: bold;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .guest-container {
+    flex-direction: column;
+  }
+
+  .guest-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 1001;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  }
+
+  .guest-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .guest-main-content {
+    padding: 5rem 1rem 1rem 1rem;
+  }
+
+  .guest-header {
+    padding-left: 0;
+  }
+
+  .guest-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  input, select, textarea, button {
+    font-size: 0.95rem;
+  }
+}
+
+/* ANNOUNCEMENTS */
+.announcement-box-container {
+  background-color: #93DA97;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 8px solid #5E936C;
+  max-width: 100%; /* prevent container overflow */
+  overflow-wrap: break-word; /* make sure container also wraps text */
+}
+
+.announcement-item {
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #7fb58c;
+  word-wrap: break-word; /* allow long words to wrap */
+  overflow-wrap: break-word;
+  white-space: pre-wrap; /* preserves line breaks but still wraps */
+}
+
+.announcement-item p {
+  color: #444;
+  margin: 0.3rem 0;
+  line-height: 1.5;
+  word-wrap: break-word; /* ensures long text wraps */
+  overflow-wrap: break-word;
+  white-space: pre-wrap; /* keeps line breaks */
+}
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; /* horizontal scroll on small screens */
+}
+
+.schedule-table {
+  width: 100%;
+  min-width: 600px; /* ensures table scrolls on mobile */
+  border-collapse: collapse;
+}

@@ -1,0 +1,206 @@
+.assign-route-container {
+  background: #ddf6d2;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.assign-route-container h2 {
+  color: #3e5f44;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: bold;
+  color: #3e5f44;
+}
+
+input,
+select,
+textarea {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #e8ffd7;
+  width: 100%; /* full width */
+  box-sizing: border-box; /* include padding in width */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #5e936c;
+  box-shadow: 0 0 0 2px rgba(94, 147, 108, 0.3);
+}
+
+/* --- BUTTONS --- */
+.button-group {
+  display: flex;
+  justify-content: center; /* center buttons */
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap; /* allows buttons to wrap on small screens */
+}
+
+/* Primary button (Assign / Save) */
+.button-group button {
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+  text-align: center;
+  color: #fff;
+  background-color: #5e936c;
+}
+
+/* Hover effect for primary button */
+.button-group button:hover {
+  background-color: #3e5f44;
+}
+
+/* Cancel button */
+.button-group .btn-cancel {
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  color: #333;
+  background-color: #ccc; /* updated color */
+  transition: background-color 0.2s;
+}
+
+/* Hover effect for cancel button */
+.button-group .btn-cancel:hover {
+  background-color: #999;
+}
+
+/* ✅ Stretch Assign Route button fully if it's the only button */
+.button-group button:only-child {
+  width: 100%;
+  max-width: none;
+}
+
+/* ✅ Edit mode: Save + Cancel buttons centered and equal width */
+.button-group button,
+.button-group .btn-cancel {
+  min-width: 140px; /* same width for both buttons in edit mode */
+  flex: 1 1 auto;   /* allow them to grow */
+}
+
+/* ✅ History section wrapper */
+.route-history-container {
+  width: 100%;
+  overflow-x: auto; /* horizontal scroll */
+  overflow-y: hidden; /* prevent vertical scroll */
+}
+
+/* ✅ Table styling */
+.route-history-container table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* ensures table can scroll horizontally on mobile */
+}
+
+/* Ensure last column (Action) is wide enough for buttons */
+.route-history-container table th:last-child,
+.route-history-container table td:last-child {
+  min-width: 150px; /* adjust if needed */
+}
+
+/* ✅ Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 220px;
+}
+
+/* --- ICONS / LOADER --- */
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3E5F44;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+  animation: spin 1s linear infinite;
+}
+
+.checkmark {
+  color: #4CAF50;
+  font-size: 40px;
+  animation: pop 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.xmark {
+  color: #F44336;
+  font-size: 40px;
+  animation: pop 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pop {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Mobile responsiveness for table scroll */
+@media (max-width: 768px) {
+  .route-history-container table {
+    min-width: 600px;
+  }
+
+  /* Keep Edit + Delete buttons inline */
+  .route-history-container table td:last-child {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .route-history-container table td:last-child button {
+    flex: 1 1 auto;
+    min-width: 70px;
+    background-color: #5e936c; /* both buttons green */
+    color: #fff;
+  }
+
+  .route-history-container table td:last-child button.btn-cancel {
+    background-color: #5e936c; /* same as primary button */
+  }
+}
